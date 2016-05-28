@@ -3,69 +3,78 @@
     <head>
         <title>PRODUCT : Rapture Getting Started Guide</title>
         <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <link rel="stylesheet" href="../assets/css/vendor/bootstrap.min.css" type="text/css" />
+        <link rel="stylesheet" href="../assets/css/main.css" type="text/css" />
         <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
 
-    <body class="theme-default aui-theme-default">
-        <div id="page">
-            <div id="main" class="aui-page-panel">
-                <div id="main-header">
-                    <h1 id="title-heading" class="pagetitle">
-                                                <span id="title-text">
-                            PRODUCT : Rapture Getting Started Guide
-                        </span>
-                    </h1>
-                </div>
-
-                <div id="content" class="view">
-                    <div class="page-metadata">
-
-
-
-
-
-
-
-            Created by <span class='author'> Andrew Clark</span>, last modified by <span class='editor'> Jeremy Flieder</span> on May 25, 2016
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <ul class="nav navbar-nav float-left menu-list">
+                <li class="nav-item">
+                    <a href="#/login">
+                        <img alt="Rapture Logo" src="../assets/images/rapture-logo.png" class="logo" />
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <br>
+        <div class="container-full-width">
+            <div class="centered layout-container">
+                <div id="page" class="article">
+                    <div id="main" class="aui-page-panel">
+                        <div id="main-header">
+                            <h1 id="title-heading" class="pagetitle heading-dark">
+                                                        <span id="title-text">
+                                    PRODUCT : Rapture Getting Started Guide
+                                </span>
+                            </h1>
                         </div>
-                    <div id="main-content" class="wiki-content group">
-                    <div class="contentLayout2">
-<div class="columnLayout two-right-sidebar" data-layout="two-right-sidebar">
-<div class="cell normal" data-type="normal">
-<div class="innerCell">
-<hr/><h1 id="RaptureGettingStartedGuide-1.SetupyourRaptureClientenvironment">1. Set up your Rapture Client environment</h1><p>In this section you will:</p><ol><li>Download the Rapture Client to your computer.  Currently this is part of Rapture Tutorials and will include some getting started Tutorials for you. <br/><br/></li><li>Start a Rapture shell by running the Rapture Setup Script.<br/><br/></li><li>Choose a Tutorial to start in any language you are interested in.</li></ol><p> </p><hr/><h1 id="RaptureGettingStartedGuide-2.DownloadtheClient">2. Download the Client </h1><p><span>Use git to clone the Incapture/RaptureTutorials project or download a pre-built client zip directly from github. If you need a git client please go here:</span></p><p><span><a href="https://git-scm.com/downloads" class="external-link" rel="nofollow">https://git-scm.com/downloads</a></span></p><p><span>Once you have git installed:<br/></span></p><div
-        id="getcode"                style="color:white;background-color:black;padding:20px;border:white;border-color: gray;border-radius: 5px;"       title="git clone"           >
-    <pre>$ git clone <a href="https://github.com/Incapture/RaptureTutorials.git" class="external-link" rel="nofollow">https://github.com/Incapture/RaptureTutorials.git</a></pre>
-</div>
-<div class="confluence-information-macro confluence-information-macro-note"><p class="title">Alternative</p><span class="aui-icon aui-icon-small aui-iconfont-warning confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>Alternative route: Download the latest release from <a href="https://github.com/Incapture/RaptureTutorials/releases" class="external-link" rel="nofollow">here</a> and unzip it</p></div></div><p> </p><p> </p><hr/><h1 id="RaptureGettingStartedGuide-3.StartingaRaptureshell">3. Starting a Rapture shell </h1><div class="table-wrap"><table class="wrapped confluenceTable"><tbody><tr><th colspan="2" class="confluenceTh">Starting a Rapture shell will configure a terminal setup for connecting to your Rapture server</th></tr><tr><td class="confluenceTd">ReflexRunner</td><td class="confluenceTd">A Rapture App to run native Rapture scripts from your Client</td></tr><tr><td class="confluenceTd">Environment Variables</td><td class="confluenceTd"><ul><li>RAPTURE_HOST</li><li>RAPTURE_USER</li><li>RAPTURE_TUTORIAL_CSV</li><li>RAPTURE_HOME</li></ul></td></tr></tbody></table></div><p> </p><p>MAC:  In a terminal window starting in /RaptureTutorials directory:</p><div
-        id="getcode"                style="color:white;background-color:black;padding:20px;border:white;border-color: gray;border-radius: 5px;"       title="Mac"           >
-    <pre>_$ cd Setup</pre><pre>_$ ./rapture.sh</pre>
-</div>
-<p> </p><p>WINDOWS: From a CMD prompt <span>starting in /RaptureTutorials directory:</span></p><div
-        id="getcode"                style="color:white;background-color:black;padding:20px;border:white;border-color: gray;border-radius: 5px;"       title="Windows"           >
-    <pre>_\&gt; cd Setup</pre><pre>_\&gt; rapture.bat</pre>
-</div>
-<p> </p><p>You will be prompted for your Incapture Developer Portal username and password.</p><p> </p><p>Next issue this command to get to the Rapture Tutorials home directory.</p><p>MAC:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
-<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: bash; gutter: false; theme: Midnight" data-theme="Midnight">_$ cd $RAPTURE_HOME</pre>
-</div></div><p><span><br/></span></p><p><span>WINDOWS:</span></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
-<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: text; gutter: false; theme: Midnight" data-theme="Midnight">_\&gt; cd %RAPTURE_HOME%</pre>
-</div></div><p> </p><hr/><h1 id="RaptureGettingStartedGuide-4.StartaTutorial">4. Start a Tutorial</h1><p>Make sure that you have the correct JDK version installed (1.8 or higher). You can download here:</p><p><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" class="external-link" rel="nofollow">http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html</a></p><p>So your environment is ready to go lets dive into a tutorial!</p><p>The tutorials are expressed in three different languages and cover the same objectives: </p><ol><li>Upload a CSV file to a Blob repository</li><li>Create a Document based on the CSV blob</li><li>Create a Series using the Document data</li><li>Run report code to create and view a pdf (blob) report. (Note: This step is only available in the JAVA version of the tutorial)</li></ol><p> </p><div class="table-wrap"><table class="wrapped confluenceTable"><tbody><tr><th style="text-align: center;" class="confluenceTh"><h3 id="RaptureGettingStartedGuide-JAVAInstructions"><span style="color: rgb(0,0,0);">JAVA Instructions</span></h3></th><th style="text-align: center;" class="confluenceTh"><h3 id="RaptureGettingStartedGuide-Reflex/UIInstructions"><span style="color: rgb(0,0,0);">Reflex/UI Instructions</span></h3></th><th style="text-align: center;" class="confluenceTh"><h3 id="RaptureGettingStartedGuide-PythonInstructions"><span style="color: rgb(0,0,0);">Python Instructions</span></h3></th></tr><tr><td style="text-align: center;" class="confluenceTd"><h3 id="RaptureGettingStartedGuide-RaptureGettingStarted:Java71630907.html"><a href="https://incapture.github.io/RaptureTutorials/Tutorial1/JAVA/index.html">Rapture Getting Started: Java</a></h3></td><td style="text-align: center;" class="confluenceTd"><h3 id="RaptureGettingStartedGuide-RaptureGettingStarted:Reflex71630884.html"><a href="https://incapture.github.io/RaptureTutorials/Tutorial1/Reflex/index.html">Rapture Getting Started: Reflex</a></h3></td><td style="text-align: center;" class="confluenceTd"><h3 id="RaptureGettingStartedGuide-RaptureGettingStarted:Python71630930.html"><a href="https://incapture.github.io/RaptureTutorials/Tutorial1/Python/index.html">Rapture Getting Started: Python</a></h3></td></tr></tbody></table></div></div>
-</div>
-<div class="cell aside" data-type="aside">
-<div class="innerCell">
-<div class="confluence-information-macro confluence-information-macro-note"><p class="title">Prerequisites </p><span class="aui-icon aui-icon-small aui-iconfont-warning confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>Before beginning this demonstration of Rapture it is expected that your environment satisfies the following pre-requisites</p><ol><li><p>Java JDK 8</p></li><li><p>If you are building the Java tutorial code:</p><ol><li><p><a href="https://help.github.com/articles/set-up-git/" class="external-link" rel="nofollow">Git</a></p></li><li><p><a href="http://gradle.org/gradle-download/" class="external-link" rel="nofollow">Gradle</a></p></li></ol></li><li><p>For the Python Tutorial:</p><ol><li><p>Python 2.7.10 (or later) and the following modules:</p></li><li><p>pip install requests (<a href="https://pypi.python.org/pypi/requests" class="external-link" rel="nofollow">https://pypi.python.org/pypi/requests</a>)</p></li><li><p>pip install numpy (<a href="https://pypi.python.org/pypi/numpy" class="external-link" rel="nofollow">https://pypi.python.org/pypi/numpy</a>)</p></li></ol></li></ol></div></div><div class="confluence-information-macro confluence-information-macro-information"><hr><p class="title">Important Links</p><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p><a href="Rapture-Information-Manager-Overview_72319060.html">Rapture Information Manager Overview</a></p><p><a href="http://etn.incapture.net/#/login" class="external-link" rel="nofollow">Login to Rapture Etienne</a></p><p><a href="http://incapturetechnologies.com" class="external-link" rel="nofollow">Incapture Technologies</a></p><p> </p></div></div><p> </p><p> </p><p> </p><p> </p><p> </p></div>
-</div>
-</div>
-</div>
-                    </div>
 
-                                        <div class="pageSection group">
-                                     </div>
-            <div id="footer" role="contentinfo">
-                <section class="footer-body">
-                    <p>Document generated by Confluence on May 26, 2016 13:54</p>
-                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
-                </section>
+                        <div id="content" class="view">
+                            <div class="page-metadata sub-heading-dark">
+                                Created by <span class='author'> Andrew Clark</span>, last modified by <span class='editor'> Jeremy Flieder</span> on May 25, 2016
+                            </div>
+                            <div id="main-content" class="wiki-content group">
+                            <div class="contentLayout2">
+        <div class="columnLayout two-right-sidebar" data-layout="two-right-sidebar">
+        <div class="cell normal" data-type="normal">
+        <div class="innerCell">
+        <hr/><h3 id="RaptureGettingStartedGuide-1.SetupyourRaptureClientenvironment">1. Set up your Rapture Client environment</h3><p>In this section you will:</p><ol><li>Download the Rapture Client to your computer.  Currently this is part of Rapture Tutorials and will include some getting started Tutorials for you. <br/><br/></li><li>Start a Rapture shell by running the Rapture Setup Script.<br/><br/></li><li>Choose a Tutorial to start in any language you are interested in.</li></ol><p> </p><hr/><h3 id="RaptureGettingStartedGuide-2.DownloadtheClient">2. Download the Client </h3><p><span>Use git to clone the Incapture/RaptureTutorials project or download a pre-built client zip directly from github. If you need a git client please go here:</span></p><p><span><a href="https://git-scm.com/downloads" class="external-link" rel="nofollow">https://git-scm.com/downloads</a></span></p><p><span>Once you have git installed:<br/></span></p><div
+                id="getcode"                style="color:white;background-color:black;padding:20px;border:white;border-color: gray;border-radius: 5px;"       title="git clone"           >
+            <pre>$ git clone <a href="https://github.com/Incapture/RaptureTutorials.git" class="external-link" rel="nofollow">https://github.com/Incapture/RaptureTutorials.git</a></pre>
+        </div>
+        <div class="confluence-information-macro confluence-information-macro-note"><p class="title">Alternative</p><span class="aui-icon aui-icon-small aui-iconfont-warning confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>Alternative route: Download the latest release from <a href="https://github.com/Incapture/RaptureTutorials/releases" class="external-link" rel="nofollow">here</a> and unzip it</p></div></div><p> </p><p> </p><hr/><h3 id="RaptureGettingStartedGuide-3.StartingaRaptureshell">3. Starting a Rapture shell </h3><div class="table-wrap"><table class="wrapped confluenceTable"><tbody><tr><th colspan="2" class="confluenceTh">Starting a Rapture shell will configure a terminal setup for connecting to your Rapture server</th></tr><tr><td class="confluenceTd">ReflexRunner</td><td class="confluenceTd">A Rapture App to run native Rapture scripts from your Client</td></tr><tr><td class="confluenceTd">Environment Variables</td><td class="confluenceTd"><ul><li>RAPTURE_HOST</li><li>RAPTURE_USER</li><li>RAPTURE_TUTORIAL_CSV</li><li>RAPTURE_HOME</li></ul></td></tr></tbody></table></div><p> </p><p>MAC:  In a terminal window starting in /RaptureTutorials directory:</p><div
+                id="getcode"                style="color:white;background-color:black;padding:20px;border:white;border-color: gray;border-radius: 5px;"       title="Mac"           >
+            <pre>_$ cd Setup</pre><pre>_$ ./rapture.sh</pre>
+        </div>
+        <p> </p><p>WINDOWS: From a CMD prompt <span>starting in /RaptureTutorials directory:</span></p><div
+                id="getcode"                style="color:white;background-color:black;padding:20px;border:white;border-color: gray;border-radius: 5px;"       title="Windows"           >
+            <pre>_\&gt; cd Setup</pre><pre>_\&gt; rapture.bat</pre>
+        </div>
+        <p> </p><p>You will be prompted for your Incapture Developer Portal username and password.</p><p> </p><p>Next issue this command to get to the Rapture Tutorials home directory.</p><p>MAC:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+        <pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: bash; gutter: false; theme: Midnight" data-theme="Midnight">_$ cd $RAPTURE_HOME</pre>
+        </div></div><p><span><br/></span></p><p><span>WINDOWS:</span></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+        <pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: text; gutter: false; theme: Midnight" data-theme="Midnight">_\&gt; cd %RAPTURE_HOME%</pre>
+        </div></div><p> </p><hr/><h3 id="RaptureGettingStartedGuide-4.StartaTutorial">4. Start a Tutorial</h3><p>Make sure that you have the correct JDK version installed (1.8 or higher). You can download here:</p><p><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" class="external-link" rel="nofollow">http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html</a></p><p>So your environment is ready to go lets dive into a tutorial!</p><p>The tutorials are expressed in three different languages and cover the same objectives: </p><ol><li>Upload a CSV file to a Blob repository</li><li>Create a Document based on the CSV blob</li><li>Create a Series using the Document data</li><li>Run report code to create and view a pdf (blob) report. (Note: This step is only available in the JAVA version of the tutorial)</li></ol><p> </p><div class="table-wrap"><table class="wrapped confluenceTable"><tbody><tr><th style="text-align: center;" class="confluenceTh"><h3 id="RaptureGettingStartedGuide-JAVAInstructions"><span style="color: rgb(0,0,0);">JAVA Instructions</span></h3></th><th style="text-align: center;" class="confluenceTh"><h3 id="RaptureGettingStartedGuide-Reflex/UIInstructions"><span style="color: rgb(0,0,0);">Reflex/UI Instructions</span></h3></th><th style="text-align: center;" class="confluenceTh"><h3 id="RaptureGettingStartedGuide-PythonInstructions"><span style="color: rgb(0,0,0);">Python Instructions</span></h3></th></tr><tr><td style="text-align: center;" class="confluenceTd"><h3 id="RaptureGettingStartedGuide-RaptureGettingStarted:Java71630907.html"><a href="https://incapture.github.io/RaptureTutorials/Tutorial1/JAVA/index.html">Rapture Getting Started: Java</a></h3></td><td style="text-align: center;" class="confluenceTd"><h3 id="RaptureGettingStartedGuide-RaptureGettingStarted:Reflex71630884.html"><a href="https://incapture.github.io/RaptureTutorials/Tutorial1/Reflex/index.html">Rapture Getting Started: Reflex</a></h3></td><td style="text-align: center;" class="confluenceTd"><h3 id="RaptureGettingStartedGuide-RaptureGettingStarted:Python71630930.html"><a href="https://incapture.github.io/RaptureTutorials/Tutorial1/Python/index.html">Rapture Getting Started: Python</a></h3></td></tr></tbody></table></div></div>
+        </div>
+        <div class="cell aside" data-type="aside">
+        <div class="innerCell">
+        <div class="confluence-information-macro confluence-information-macro-note"><p class="title">Prerequisites </p><span class="aui-icon aui-icon-small aui-iconfont-warning confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>Before beginning this demonstration of Rapture it is expected that your environment satisfies the following pre-requisites</p><ol><li><p>Java JDK 8</p></li><li><p>If you are building the Java tutorial code:</p><ol><li><p><a href="https://help.github.com/articles/set-up-git/" class="external-link" rel="nofollow">Git</a></p></li><li><p><a href="http://gradle.org/gradle-download/" class="external-link" rel="nofollow">Gradle</a></p></li></ol></li><li><p>For the Python Tutorial:</p><ol><li><p>Python 2.7.10 (or later) and the following modules:</p></li><li><p>pip install requests (<a href="https://pypi.python.org/pypi/requests" class="external-link" rel="nofollow">https://pypi.python.org/pypi/requests</a>)</p></li><li><p>pip install numpy (<a href="https://pypi.python.org/pypi/numpy" class="external-link" rel="nofollow">https://pypi.python.org/pypi/numpy</a>)</p></li></ol></li></ol></div></div><div class="confluence-information-macro confluence-information-macro-information"><hr><p class="title">Important Links</p><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p><a href="Rapture-Information-Manager-Overview_72319060.html">Rapture Information Manager Overview</a></p><p><a href="http://etn.incapture.net/#/login" class="external-link" rel="nofollow">Login to Rapture Etienne</a></p><p><a href="http://incapturetechnologies.com" class="external-link" rel="nofollow">Incapture Technologies</a></p><p> </p></div></div><p> </p><p> </p><p> </p><p> </p><p> </p></div>
+        </div>
+        </div>
+        </div>
+                            </div>
+
+                                                <div class="pageSection group">
+                                             </div>
+                    <div id="footer" role="contentinfo">
+                        <section class="footer-body">
+                            <p>Document generated by Confluence on May 26, 2016 13:54</p>
+                        </section>
+                    </div>
+                </div>
             </div>
-        </div>     </body>
+        </div>
+    </body>
 </html>
