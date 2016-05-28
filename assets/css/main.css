@@ -1,0 +1,132 @@
+body {
+    padding-top: 76px;
+    font-family: 'azo-sans-web', sans-serif;
+    background-color:rgba(27,110,179,0.8);
+}
+
+ul {
+    word-wrap: break-word;
+}
+
+ul.list-primary {
+    list-style-type: square;
+    padding-left: 40px;
+}
+
+ul.list-secondary {
+    list-style-type: circle;
+    padding-left: 20px;
+}
+
+.navbar {
+    height: auto;
+    margin-bottom: 1%;
+}
+
+.navbar-header {
+    width: 130px;
+}
+
+.logo {
+    top: 10px; 
+    height: 60px;
+}
+
+.container-full-width {
+    width: 100%;
+}
+
+.layout-container {
+    margin-top: 5%;
+    width: 80%;
+}
+
+.first-row {
+    margin-top: 5%;
+}
+
+.centered {
+    margin: 0 auto;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.heading-light {
+    font-variant: small-caps;
+    text-align: center;
+    color: #fff;
+}
+
+.heading-dark {
+    font-variant: small-caps;
+    text-align: center;
+    color: #df4000;    
+}
+
+.sub-heading-dark {
+    color: #114571;
+    text-align: center;
+}
+
+.button-primary {
+    background: #2980b9;
+    border: 0;
+    border-bottom: 2px solid #206694;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1vw;
+    white-space: normal;
+    line-height: inherit;
+    padding: 10px 30px;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25); 
+    -webkit-box-shadow: inset 0 -2px #206694;
+    box-shadow: inset 0 -2px #206694;
+    margin: 10px 0 5px 0;
+    transition: all 0.25s ease 0s;
+}
+.button-primary:hover, .button-primary:active, .button-primary:focus {
+    color: #fff;
+    top: 1px;
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.link-sec {
+    color: #1b6eb3;
+}
+.link-sec:hover, .link-sec:active, .link-sec:focus {
+    color: #206694;
+}
+
+.post-script {
+    font-size: 90%;
+}
+
+.tile {
+    background: #fff;
+    border: 1px solid #DDD;
+    border-radius: 1px;
+    margin-bottom: 2%;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+    border-left: 5px solid #114571;
+    padding: 1% 2.5%;
+    min-height: 200px;
+}
+
+.filler-content {
+    color: #999999;
+    margin-top: 10%;
+    text-align: center;
+}
+
+.article {
+    background-color: #fff;
+}
+
+
