@@ -3,21 +3,13 @@
     <head>
         <title>PRODUCT : Rapture User Interface Overview</title>
         <link rel="stylesheet" href="styles/site.css" type="text/css" />
-        <link rel="stylesheet" href="../assets/css/vendor/bootstrap.min.css" type="text/css" />
-        <link rel="stylesheet" href="../assets/css/main.css" type="text/css" />
+        <link rel="stylesheet" href="/assets/css/vendor/bootstrap.min.css" type="text/css" />
+        <link rel="stylesheet" href="/assets/css/main.css" type="text/css" />
         <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
 
     <body>
-        <nav class="navbar navbar-default navbar-fixed-top">
-            <ul class="nav navbar-nav float-left menu-list">
-                <li class="nav-item">
-                    <a href="#/login">
-                        <img alt="Rapture Logo" src="../assets/images/rapture-logo.png" class="logo" />
-                    </a>
-                </li>
-            </ul>
-        </nav>
+        <div class="header"></div>
         <br>
         <div class="container-full-width">
             <div class="centered layout-container">
@@ -134,4 +126,12 @@
                 </div>
             </div>     
     </body>
+    <footer>
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $(".header").load("/assets/templates/header.html");
+            });
+        </script>
+    </footer>
 </html>
