@@ -129,4 +129,8 @@ ul.list-secondary {
     background-color: #fff;
 }
 
+img.confluence-embedded-image {
+    max-width: 100%;
+}
+
 
