@@ -2191,7 +2191,7 @@ table.confluenceTable th.confluenceTh.nohighlight > p {
 table.confluenceTable td.confluenceTd img,
 table.confluenceTable td.confluenceTd .confluence-embedded-file-wrapper img,
 table.confluenceTable th.confluenceTh .confluence-embedded-file-wrapper img {
-    max-width: none;
+    max-width: 80%;
 }
 
 table.confluenceTable td.numberingColumn {
