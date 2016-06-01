@@ -1,62 +1,48 @@
 <html>
-<head>
-	<title>Welcome to Rapture</title>
-	<link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css" type="text/css" />
-	<link rel="stylesheet" href="assets/css/main.css" type="text/css" />
-</head>
-<body>
-	<nav class="navbar navbar-default navbar-fixed-top">
-		<ul class="nav navbar-nav float-left menu-list">
-			<li class="nav-item">
-				<a href="index.html">
-					<img alt="Rapture Logo" src="assets/images/rapture-logo.png" class="logo" />
-				</a>
-			</li>
-		</ul>
-	</nav>
-	<br>
-	<div class="container-full-width">
-		<div class="centered layout-container">
-			<div class="row first-row">
-				<div class="col-md-offset-2 col-md-4">
-					<div class="tile">
-						<h3 class="heading-dark">Rapture User Interface</h3>
-						<ul class="list-primary">
-							<li><a href="GettingStarted/RIM_Overview.html">Overview</a></li>
-							<li><a href="GettingStarted/index.html">Getting Started</a></li>
-							<li>Tutorial 1: Your First Rapture Project</li>
-							<ul class="list-secondary">
-								<li><a href="Tutorial1/Reflex/index.html">Reflex</a></li>
-								<li><a href="Tutorial1/Python/index.html">Python</a></li>
-								<li><a href="Tutorial1/JAVA/index.html">JAVA</a></li>
+	<head>
+		<title>Welcome to Rapture</title>
+		<link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css" type="text/css" />
+		<link rel="stylesheet" href="assets/css/main.css" type="text/css" />
+	</head>
+	<body>
+		<div class="header"></div>
+		<br>
+		<div class="container-full-width">
+			<div class="centered layout-container">
+				<div class="row first-row">
+					<div class="col-md-offset-2 col-md-4">
+						<div class="tile">
+							<h3 class="heading-dark">Rapture User Interface</h3>
+							<ul class="list-primary">
+								<li><a href="GettingStarted/RIM_Overview.html">Overview</a></li>
+								<li><a href="GettingStarted/index.html">Getting Started</a></li>
+								<li>Tutorial 1: Your First Rapture Project</li>
+								<ul class="list-secondary">
+									<li><a href="Tutorial1/Reflex/index.html">Reflex</a></li>
+									<li><a href="Tutorial1/Python/index.html">Python</a></li>
+									<li><a href="Tutorial1/JAVA/index.html">JAVA</a></li>
+								</ul>
 							</ul>
-						</ul>
+						</div>
 					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="tile">
-						<h3 class="heading-dark">Rapture Workflow Manager</h3>
-						<div class="filler-content centered">Coming mid-2016</div>
+					<div class="col-md-4">
+						<div class="tile">
+							<h3 class="heading-dark">Rapture Workflow Manager</h3>
+							<div class="filler-content centered">Coming mid-2016</div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<!--<ul>
-			<li></li>
-			<ul>
-				<li><a href="GettingStarted/index.html">Getting Started</a></li>
-				<li>Tutorial 1: Your First Rapture Project</li>
-				<ul>
-					<li><a href="Tutorial1/Reflex/index.html">Reflex</a></li>
-					<li><a href="Tutorial1/Python/index.html">Python</a></li>
-					<li><a href="Tutorial1/JAVA/index.html">JAVA</a></li>
-				</ul>
-			</ul>
-			<li></li>
-			<ul>
-				<li>Coming Mid 2016</li>
-			</ul>
-		</ul>-->
-	</div>
-</body>
+	</body>
+	<footer>
+        <script src="assets/js/jquery-2.2.3.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $(".header").load("assets/templates/header.html", function(){
+                    $('img.logo').attr('src', "assets/images/rapture-logo.png");;
+                });
+            });
+        </script>
+    </footer>
 </html>
