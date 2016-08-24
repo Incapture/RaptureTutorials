@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>PRODUCT : Getting Started on Rapture: Data Research with Python/Jupyter</title>
+    <link rel="stylesheet" href="styles/site.css" type="text/css" />
+    <link rel="stylesheet" href="../../assets/css/vendor/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../assets/css/main.css" type="text/css" />
+    <link rel="icon" href="../../assets/images/favicon.ico" />
+    <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+
+<body class="theme-default aui-theme-default">
+    <div class="header"></div>
+    <br>
+    <div class="container-full-width">
+        <div class="centered layout-container">
+            <div id="page" class="article">
+                <div id="main" class="aui-page-panel">
+                    <div id="main-header">
+                        <h1 id="title-heading" class="pagetitle heading-dark">
+                                <span id="title-text">
+                                    PRODUCT : Getting Started on Rapture: Data Research with Python/Jupyter
+                                </span>
+                            </h1>
+                    </div>
+
+                    <div id="content" class="view">
+                        <div class="page-metadata sub-heading-dark">
+                            Created by <span class='author'> Andrew Clark</span>, last modified by <span class='editor'> Joe Grabenstein</span> on Aug 23, 2016
+                        </div>
+                        <div id="main-content" class="wiki-content group">
+                            <div class="contentLayout2">
+                                <div class="columnLayout three-with-sidebars" data-layout="three-with-sidebars">
+                                    <div class="cell sidebars" data-type="sidebars">
+                                        <div class="innerCell">
+                                            <p> </p>
+                                        </div>
+                                    </div>
+                                    <div class="cell normal" data-type="normal">
+                                        <div class="innerCell">
+                                            <h3 id="GettingStartedonRapture:DataResearchwithPython/Jupyter-Tutorial:GettingStartedwithRaptureandiPythonNotebook/Jupyter">Tutorial: Getting Started with Rapture and iPython Notebook / Jupyter</h3>
+                                            <p><u>Objectives:</u>
+                                            </p>
+                                            <p>Jupyter notebook is an open source web application that supports a variety of data science projects including data normalization, visualizations, statistical modeling and machine learning. This tutorials details how to access and manipulate Rapture managed data via a locally running Jupyter notebook.</p>
+                                            <p>The specific use case presented here involves loading data received as a csv file into a Rapture managed series repository and charting this data in a Jupyter notebook.  </p>
+                                            <p><u>This will cover the following steps:</u>
+                                            </p>
+                                            <ol>
+                                                <li>Installing jupyter notebook</li>
+                                                <li>Install rapture python modules</li>
+                                                <li>Connecting to Rapture demo env</li>
+                                                <li>Getting data from rapture</li>
+                                                <li>Creating graphs</li>
+                                                <li>Saving data to rapture</li>
+                                            </ol>
+                                            <p><u>For the purposes of this tutorial:</u>
+                                            </p>
+                                            <ul>
+                                                <li>We have created a Jupyter docker instance that you can connect to your Rapture Demo Env</li>
+                                                <li>We have created a notebook to get you started.  </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="cell sidebars" data-type="sidebars">
+                                        <div class="innerCell">
+                                            <div class="confluence-information-macro confluence-information-macro-note alert alert-warning">
+                                                <p class="title"><strong>Pre-req</strong></p><span class="aui-icon aui-icon-small aui-iconfont-warning confluence-information-macro-icon"></span>
+                                                <div class="confluence-information-macro-body">
+                                                    <p>Note: In order to complete this tutorial, you must have a running Rapture instance. If you do not have one, you may request one from <a href="http://dev.incapture.net" class="external-link" rel="nofollow">dev.incapture.net</a>, or use our <a href="https://raw.githubusercontent.com/RapturePlatform/Rapture/master/Apps/RaptureAPIServer/docker/docker-compose.yml" class="external-link" rel="nofollow">docker-compose.yml</a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="columnLayout three-with-sidebars" data-layout="three-with-sidebars">
+                                    <div class="cell normal" data-type="normal">
+                                        <div class="innerCell">
+                                            <h3 id="GettingStartedonRapture:DataResearchwithPython/Jupyter-Thereare2waystouseJupyternotebookwithRapture:">There are 2 ways to use Jupyter notebook with Rapture:</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="columnLayout three-with-sidebars" data-layout="three-with-sidebars">
+                                    <div class="cell normal" data-type="normal">
+                                        <div class="innerCell">
+                                            <h4 id="GettingStartedonRapture:DataResearchwithPython/Jupyter-1.)UsingDocker(easiest/fastest)">1.) Using Docker (easiest/fastest)</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="columnLayout three-with-sidebars" data-layout="three-with-sidebars">
+                                    <div class="cell normal" data-type="normal">
+                                        <div class="innerCell">
+                                            <ul>
+                                                <li>If you do not have Docker installed, please browse to <a href="https://docs.docker.com/engine/installation/" class="external-link" rel="nofollow">https://docs.docker.com/engine/installation/</a> and select the appropriate installation method for your machine (OSX, Linux and Windows compatible)</li>
+                                                <li>Once you have the Docker engine installed, simply run the following command to launch your own Jupyter notebook:</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="cell sidebars" data-type="sidebars">
+                                        <div class="innerCell">
+                                            <p> </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="columnLayout three-with-sidebars" data-layout="three-with-sidebars">
+                                    <div class="cell sidebars" data-type="sidebars">
+                                        <div class="innerCell">
+                                            <p>**TODO if this is to remain an option: make tutorial notebook files available in a downloadable .zip file. </p>
+                                        </div>
+                                    </div>
+                                    <div class="cell normal" data-type="normal">
+                                        <div class="innerCell">
+                                            <div class="code panel pdl" style="border-width: 1px;">
+                                                <div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>docker</b>
+                                                </div>
+                                                <div class="codeContent panelContent pdl">
+                                                    <pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: bash; gutter: false; theme: Confluence" data-theme="Confluence">docker run -d -p 9999:9999 --name jupyter incapture/jupyter</pre>
+                                                </div>
+                                            </div>
+                                            <p>OR (if you are using our docker-compose.yml):</p>
+                                            <div class="code panel pdl" style="border-width: 1px;">
+                                                <div class="codeContent panelContent pdl">
+                                                    <pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: bash; gutter: false; theme: Confluence" data-theme="Confluence">docker run -d -p 9999:9999 --link raptureapiserver --name jupyter incapture/jupyter </pre>
+                                                </div>
+                                            </div>
+                                            <p>Then browse to &lt;dockerMachineIP&gt;:9999</p>
+                                            <h4 id="GettingStartedonRapture:DataResearchwithPython/Jupyter-2.)InstallJupyterlocally">2.) Install Jupyter locally</h4>
+                                            <p>*Prerequisite: Anaconda must be installed locally</p>
+                                            <div class="code panel pdl" style="border-width: 1px;">
+                                                <div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>install jupyter</b>
+                                                </div>
+                                                <div class="codeContent panelContent pdl">
+                                                    <pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: bash; gutter: true; first-line: 1; theme: Confluence" data-theme="Confluence">conda install jupyter
+pip install RaptureAPI
+pip install requests
+pip install xlrd
+pip install bokeh
+pip install quandl
+pip install raptureAPI </pre>
+                                                </div>
+                                            </div>
+                                            <p>Then browse to: localhost:8888</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="columnLayout three-with-sidebars" data-layout="three-with-sidebars">
+                                    <div class="cell normal" data-type="normal">
+                                        <div class="innerCell">
+                                            <p> </p>
+                                            <hr/>
+                                            <h3 id="GettingStartedonRapture:DataResearchwithPython/Jupyter-2.OpenTutorialNotebook">2. Open Tutorial Notebook</h3>
+                                            <ul>
+                                                <li>Browse to &lt;dockerMachineIP&gt;:9999 or localhost:8888 depending on which install method you chose.</li>
+                                                <li>Navigate to tutorial/QMG/</li>
+                                                <li>Open the settings.py file and change the following:
+                                                    <ul>
+                                                        <li>Change the localInstance variable to http://&lt;yourRaptureInstanceAddress&gt;:8665/rapture
+                                                            <ul>
+                                                                <li>*Alternatively, you can use the name of the apiserver docker container, ex: &quot;http://raptureapiserver:8665/rapture&quot; if using the incapture/jupyter Docker image.</li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>set localUser to your username on your Rapture instance.
+                                                            <ul>
+                                                                <li>*If you are using Docker, your default username is: rapture</li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>set localPassword to your password on your Rapture instance.
+                                                            <ul>
+                                                                <li>*If you are using Docker, your default password is: rapture</li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                            <ul>
+                                                <li>You are now ready to begin the Data Science tutorial.
+                                                    <br/>
+                                                    <br/>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                </div>
+                                <div class="columnLayout three-with-sidebars" data-layout="three-with-sidebars">
+                                    <div class="cell sidebars" data-type="sidebars">
+                                        <div class="innerCell">
+                                            <p> </p>
+                                        </div>
+                                    </div>
+                                    <div class="cell normal" data-type="normal">
+                                        <div class="innerCell">
+                                            <h3 id="GettingStartedonRapture:DataResearchwithPython/Jupyter-3.BegintheTutorial">3. Begin the Tutorial</h3>
+                                            <ul>
+                                                <li>Navigate to Tutorial/QMG<span style="color: rgb(0,0,0);">/<a class="external-link" href="http://192.168.99.100:9999/notebooks/Tutorial/QMG/Demo_QMG_1_import.ipynb" rel="nofollow"><span class="item_name" style="color: rgb(0,0,0);">Demo_QMG_1_import.ipynb</span>
+                                                    </a>
+                                                    </span>
+                                                    <ul>
+                                                        <li><span style="color: rgb(0,0,0);"><span class="item_name" style="color: rgb(0,0,0);">The purpose of this script is to extract data from a csv or xls file, and upload it as a BLOB to your Rapture instance.</span></span>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <p><span class="item_name">At the top of this notebook file, you can see the RaptureAPI being imported:<br/></span>
+                                                    </p>
+                                                    <div class="code panel pdl" style="border-width: 1px;">
+                                                        <div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>Import</b>
+                                                        </div>
+                                                        <div class="codeContent panelContent pdl">
+                                                            <pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: py; gutter: false; theme: Confluence" data-theme="Confluence">from raptureAPI import raptureAPI </pre>
+                                                        </div>
+                                                    </div>
+                                                    <p><span class="item_name"><a class="external-link" href="http://192.168.99.100:9999/notebooks/Tutorial/QMG/Demo_QMG_1_import.ipynb" rel="nofollow"> </a></span>
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p>Also note that we are retrieving the variables you set in settings.py for our Rapture login:</p>
+                                                    <div class="code panel pdl" style="border-width: 1px;">
+                                                        <div class="codeContent panelContent pdl">
+                                                            <pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: py; gutter: false; theme: Confluence" data-theme="Confluence">import settings
+settings.init()
+
+rapture = raptureAPI.raptureAPI(settings.localInstance, settings.localUser, settings.localPassword)</pre>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <p>From here, you can follow the documentation within the notebook itself.</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="cell sidebars" data-type="sidebars">
+                                        <div class="innerCell">
+                                            <p> </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+                <div id="footer" role="contentinfo">
+                    <section class="footer-body">
+                        <p>Document generated by Confluence on Aug 23, 2016 20:19</p>
+                        <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a>
+                        </div>
+                    </section>
+                </div>
+            </div>
+</body>
+<footer>
+    <script src="../../assets/js/jquery-2.2.3.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".header").load("../../assets/templates/header.html", function() {
+                $('img.logo').attr('src', "../../assets/images/rapture-logo.png");;
+            });
+        });
+    </script>
+</footer>
+</html>

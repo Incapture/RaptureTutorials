@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>PRODUCT : Setting up Rapture on Docker</title>
+    <link rel="stylesheet" href="styles/site.css" type="text/css" />
+    <link rel="stylesheet" href="../../assets/css/vendor/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../assets/css/main.css" type="text/css" />
+    <link rel="icon" href="../../assets/images/favicon.ico" />
+    <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+
+<body class="theme-default aui-theme-default">
+    <div class="header"></div>
+    <br>
+    <div class="container-full-width">
+        <div class="centered layout-container">
+            <div id="page" class="article">
+                <div id="main" class="aui-page-panel">
+                    <div id="main-header">
+                        <h1 id="title-heading" class="pagetitle heading-dark">
+                            <span id="title-text">
+                                PRODUCT : Setting up Rapture on Docker
+                            </span>
+                        </h1>
+                    </div>
+
+                    <div id="content" class="view">
+                        <div class="page-metadata sub-heading-dark">
+                            Created by <span class='author'> Joe Grabenstein</span>, last modified by <span class='editor'> C Y Tan</span> on Aug 23, 2016
+                        </div>
+                        <div id="main-content" class="wiki-content group">
+                            <div class="contentLayout2">
+                                <div class="columnLayout single" data-layout="single">
+                                    <div class="cell normal" data-type="normal">
+                                        <div class="innerCell">
+                                            <h3 id="SettingupRaptureonDocker-ThisguidewillgooverhowtosetupaRaptureAPIserveronyourownmachineusingDocker">This guide will go over how to set up a Rapture API server on your own machine using Docker</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="columnLayout single" data-layout="single">
+                                    <div class="cell normal" data-type="normal">
+                                        <div class="innerCell">
+                                            <div class="alert alert-warning">
+                                                <p><span style="color: rgb(255,0,0);">Prerequisite</span>: You must have Docker installed on your machine. If you do not have Docker, please install the appropriate version for your operating system from: <a href="https://docs.docker.com/engine/installation/" class="external-link" rel="nofollow">https://docs.docker.com/engine/installation/</a> </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="columnLayout single" data-layout="single">
+                                    <div class="cell normal" data-type="normal">
+                                        <div class="innerCell">
+                                            <ol>
+                                                <li>Ensure that your Docker machine (if using a VM) is up and running, and that it has <em>at least </em>4gb of memory allowed. You can check the allotted memory by opening Virtual Box and adjusting the system settings of the default Docker VM.</li>
+                                                <li>
+                                                    <p>To download the docker-compose.yml file from our open source github repository, use the following command:</p>
+                                                    <div class="code panel pdl" style="border-width: 1px;">
+                                                        <div class="codeContent panelContent pdl">
+                                                            <pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: bash; gutter: false; theme: Confluence" data-theme="Confluence">curl -O https://raw.githubusercontent.com/RapturePlatform/Rapture/master/Apps/RaptureAPIServer/docker/docker-compose.yml</pre>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <p>Then, in the same directory, run the following command:</p>
+                                                    <div class="code panel pdl" style="border-width: 1px;">
+                                                        <div class="codeContent panelContent pdl">
+                                                            <pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: bash; gutter: false; theme: Confluence" data-theme="Confluence">docker-compose up -d</pre>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <p>To tail the API server's log in a terminal, do the following:</p>
+                                                    <ol>
+                                                        <li>
+                                                            <div class="code panel pdl" style="border-width: 1px;">
+                                                                <div class="codeContent panelContent pdl">
+                                                                    <pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: bash; gutter: false; theme: Confluence" data-theme="Confluence">docker logs -f $(docker ps | grep &quot;incapture/raptureapiserver*&quot; | awk &#39;{print $1}&#39;)</pre>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li>You should now be able to see the recent log entries from the RaptureAPI server. If you see &quot;Local api url is &lt;URL&gt;...&quot; then the API server has successfully started.</li>
+                                                    </ol>
+                                                </li>
+                                                <li>API calls can be directed to http://&lt;dockerMachineIP&gt;:8665/rapture</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="columnLayout single" data-layout="single">
+                                    <div class="cell normal" data-type="normal">
+                                        <div class="innerCell">
+                                            <h4 id="SettingupRaptureonDocker-What&#39;sNext?">What's Next?</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="columnLayout single" data-layout="single">
+                                    <div class="cell normal" data-type="normal">
+                                        <div class="innerCell">
+                                            <p>Now that you have your own Rapture API server up &amp; running, you're probably curious how to use the API itself. We have extensive API &amp; Reflex documentation as well as a few tutorials to get you started:</p>
+                                            <ul>
+                                                <li><a href="http://dev.incapture.net:8080/template/documentation/Rapture_Deep_Dive.pdf" class="external-link" rel="nofollow">Rapture Overview - what is Rapture?</a>
+                                                </li>
+                                                <li><a href="http://repo.incapturesolutions.com/apidoc/" class="external-link" rel="nofollow">Latest Rapture API Documentation</a>
+                                                </li>
+                                                <li><a href="http://dev.incapture.net:8080/template/documentation/Rapture.pdf" class="external-link" rel="nofollow">Rapture &amp; Reflex Manual</a>
+                                                </li>
+                                                <li><a href="http://incapture.github.io/RaptureTutorials/GettingStarted/" class="external-link" rel="nofollow">Getting Started API Tutorial</a> - for now this is geared towards hosted environments</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+                <div id="footer" role="contentinfo">
+                    <section class="footer-body">
+                        <p>Document generated by Confluence on Aug 23, 2016 21:11</p>
+                        <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<footer>
+    <script src="../../assets/js/jquery-2.2.3.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".header").load("../../assets/templates/header.html", function() {
+                $('img.logo').attr('src', "../../assets/images/rapture-logo.png");;
+            });
+        });
+    </script>
+</footer>
+</html>
