@@ -1,5 +1,5 @@
 #!/bin/bash
-HOST="http://developer.incapture.net:8080"
+HOST="http://developer.incapture.net:80"
 REFLEX_RUNNER_LATEST_HOST="https://github.com"
 REFLEX_RUNNER_LATEST="$REFLEX_RUNNER_LATEST_HOST/RapturePlatform/Rapture/releases/latest"
 
@@ -14,11 +14,16 @@ else
   echo "Please run this script from within the RaptureTutorials directory."
 fi
 
+if [ -f /usr/xpg4/bin/tail ] ; then
+   tailcmd="/usr/xpg4/bin/tail"
+else
+   tailcmd="tail"
+fi
 
 function validate_curl_response {
-  local curl_exit_code=$1
-  local http_status_code=$2
-  local error_message=$3
+  curl_exit_code=$1
+  http_status_code=$2
+  error_message=$3
 
   if [[ $curl_exit_code -ne 0 || $http_status_code -ne 200 ]] ; then
     echo $error_message
@@ -28,8 +33,8 @@ function validate_curl_response {
 }
 
 function prompt_yes_no {
-  local prompt_message="$1 [Y/n] "
-  local return_val
+  prompt_message="$1 [Y/n] "
+  return_val=""
 
   while true; do
     read -p "$prompt_message" response
@@ -51,12 +56,12 @@ function prompt_yes_no {
 }
 
 function get_download_link {
-  local curl_results=$( curl -qLSsw '\n%{http_code}' $REFLEX_RUNNER_LATEST )
-  validate_curl_response $? $(echo "$curl_results" | tail -n1) "There was a problem getting the link to the latest version of ReflexRunner at $REFLEX_RUNNER_LATEST."
-  local page_html=$(echo "$curl_results" | sed \$d) #strip http status
+  curl_results=$( curl -qLSsw '\n%{http_code}' $REFLEX_RUNNER_LATEST )
+  validate_curl_response $? $(echo "$curl_results" | $tailcmd -n1) "There was a problem getting the link to the latest version of ReflexRunner at $REFLEX_RUNNER_LATEST."
+  page_html=$(echo "$curl_results" | sed \$d) #strip http status
 
-  local pattern="href=\"(.*ReflexRunner.*\.zip)\""
-  local use_next_zip=false
+  pattern="href=\"(.*ReflexRunner.*\.zip)\""
+  use_next_zip=false
   while read line; do
   if [[ $line =~ $pattern ]]; then
       download_link="${BASH_REMATCH[1]}"
@@ -70,11 +75,11 @@ function get_download_link {
 }
 
 function find_in_directory {
-  local search_string=$1
-  local validation_string=$2
-  local search_path=$3
+  search_string=$1
+  validation_string=$2
+  search_path=$3
 
-  echo $(find $search_path -name $search_string 2>/dev/null |grep -m 1 $validation_string)
+  echo $(find $search_path -name $search_string 2>/dev/null | grep $validation_string | head -1)
 }
 
 tutorial_var_ls=$(ls $RAPTURE_TUTORIAL_CSV)
@@ -89,7 +94,7 @@ fi
 reflex_runner_is_in_path=false
 reflex_runner_path=$(which ReflexRunner)
 
-if [ -z "$reflex_runner_path" ]; then
+if [ $? -ne 0 ]; then
   reflex_runner_path=$(find_in_directory ReflexRunner bin/ReflexRunner $rapture_tutorials_dir)
 else
   reflex_runner_is_in_path=true
@@ -114,8 +119,6 @@ if [ -z "$reflex_runner_path" ]; then
   fi
 fi
 
-
-
 if [ -n "$reflex_runner_path" ] && [ !$reflex_runner_is_in_path ] ; then
   add_to_path=$(dirname $reflex_runner_path)
   echo "export PATH=$PATH:$add_to_path" >> $env_var_filename
@@ -126,17 +129,22 @@ read -p "Enter Incapture User: " user
 read -s -p "Enter Incapture Password: " pass
 echo $'\n'
 
-hashpass=$(echo -n $pass | md5)
+md5=$(which md5)
+if [ $? -eq 0 ]; then
+  hashpass=$(echo -n $pass | md5)
+else
+  hashpass=$(echo -n $pass | digest -a md5)
+fi
 
 login_url="$HOST/login/login?user=$user&password=$hashpass"
 env_vars_url="$HOST/curtisscript/getEnvInfo?username=$user"
 
 curl_results=$( curl -qSsw '\n%{http_code}' --cookie-jar .cookiefile $login_url )
-validate_curl_response $? $(echo "$curl_results" | tail -n1) "There was a problem logging into $HOST."
+validate_curl_response $? $(echo "$curl_results" | $tailcmd -n1) "There was a problem logging into $HOST."
 
 # get environment variable data, append HTTP status code in separate line
 curl_results=$( curl -qSsw '\n%{http_code}' --cookie .cookiefile $env_vars_url )
-validate_curl_response $? $(echo "$curl_results" | tail -n1) "There was a problem retrieving the environment variables from $HOST."
+validate_curl_response $? $(echo "$curl_results" | $tailcmd -n1) "There was a problem retrieving the environment variables from $HOST."
 env_data=$(echo "$curl_results" | sed \$d) #strip http status
 
 
